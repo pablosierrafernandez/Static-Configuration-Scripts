@@ -1,0 +1,46 @@
+dl. de març 14 22:22:51 UTC 2022
+
+net.ipv4.ip_forward = 0
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+9: eth0@if10: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 36:27:77:be:67:50 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 192.0.2.4/29 brd 192.0.2.7 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::3427:77ff:febe:6750/64 scope link 
+       valid_lft forever preferred_lft forever
+
+192.0.2.0/29 dev eth0 proto kernel scope link src 192.0.2.4 
+
+address: 192.0.2.04
+network: 192.0.2.0
+netmask: 255.255.255.248
+broadcast: 192.0.2.7
+
+ifquery: unknown interface eth1
+
+
+PING router (192.0.2.1) 56(84) bytes of data.
+64 bytes from router (192.0.2.1): icmp_seq=1 ttl=64 time=0.071 ms
+64 bytes from router (192.0.2.1): icmp_seq=2 ttl=64 time=0.039 ms
+64 bytes from router (192.0.2.1): icmp_seq=3 ttl=64 time=0.079 ms
+
+--- router ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 50ms
+rtt min/avg/max/mdev = 0.039/0.063/0.079/0.017 ms
+
+
+Starting Nmap 7.70 ( https://nmap.org ) at 2022-03-14 22:22 UTC
+Nmap scan report for router (192.0.2.1)
+Host is up (0.000049s latency).
+
+PORT   STATE SERVICE
+22/tcp open  ssh
+MAC Address: EA:3C:04:D1:3B:7D (Unknown)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.58 seconds
